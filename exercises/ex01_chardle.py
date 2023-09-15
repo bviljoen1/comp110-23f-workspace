@@ -31,5 +31,5 @@ if character_sum == 0:
     print("No instances of " + single_character + " found in " + random_word)
 if character_sum == 1:
     print(str(character_sum) + " instance of " + single_character + " found in " + random_word)
-if character_sum >1:
+if character_sum > 1:
     print(str(character_sum) + " instances of " + single_character + " found in " + random_word)
