@@ -4,12 +4,12 @@ __author__ = "730579443"
 
 # Contains character function definition
 def contains_char(search_str: str, target_char: str) -> bool:
-    """returns true or false for functions within"""
+    """Returns true or false for functions within."""
     assert len(target_char) == 1
     search_idx: int = 0
     while search_idx < (len(search_str)):
         if search_str[search_idx] == target_char:
-            return  True
+            return True
         else:
             search_idx += 1
     return False
@@ -17,7 +17,7 @@ def contains_char(search_str: str, target_char: str) -> bool:
 
 # emojified function definition -> will see whether or not a character is present at each index
 def emojified(first_guess: str, second_secret: str) -> str:
-    """Codifies colored boxes for a guess based on a secret word using contains_char"""
+    """Codifies colored boxes for a guess based on a secret word using contains_char."""
     assert len(first_guess) == len(second_secret)
     WHITE_BOX: str = "\U00002B1C"
     GREEN_BOX: str = "\U0001F7E9"
@@ -28,15 +28,16 @@ def emojified(first_guess: str, second_secret: str) -> str:
     while emojified_idx < (len(first_guess)):
         if first_guess[emojified_idx] == second_secret[emojified_idx]:
             emoji += GREEN_BOX
-        elif contains_char(second_secret, first_guess[emojified_idx]) == True:
+        elif contains_char(second_secret, first_guess[emojified_idx]) is True:
             emoji += YELLOW_BOX
-        elif contains_char(second_secret, first_guess[emojified_idx]) == False:
+        elif contains_char(second_secret, first_guess[emojified_idx]) is False:
             emoji += WHITE_BOX
         emojified_idx += 1
     return emoji
 
 
-def input_guess(expected_length: int) -> int:
+def input_guess(expected_length: int) -> str:
+    """Ensures inputted guess is the correct length."""
     # this will make sure the inputted guess is the correct length as the expected. it will prompt usser to resubmit a word until it is the correct length
     guess: str = input(f"Enter a {expected_length} character word: ")
     while len(guess) != expected_length:
@@ -45,13 +46,13 @@ def input_guess(expected_length: int) -> int:
 
 
 def main() -> None:
-    """the entrypoint pf the program and main game loop."""
+    """The entrypoint pf the program and main game loop."""
     # code goes here
     # the secret word is codes, undernearth it I am calling the functions I defined above to check each index of the word based on the input the user gives (guess_input)
     secret_word: str = "codes"
     guess_attempts: int = 1
     won: bool = False
-    while guess_attempts < 7 and won == False:
+    while guess_attempts < 7 and won is False:
         print(f"=== Turn {guess_attempts}/6 ===")
         guess = input_guess(5)
         print(emojified(guess, secret_word))
@@ -61,7 +62,7 @@ def main() -> None:
         else:
             guess_attempts += 1
         # if the person gets it wrong this will move it onto the next attempt.
-    if won == False:
+    if won is False:
         print("X/6 - Sorry, try again tomorrow!")
 
 

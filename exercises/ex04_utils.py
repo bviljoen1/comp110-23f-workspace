@@ -1,6 +1,7 @@
 """Utils - a working product."""
 __author__ = "730579443"
 
+
 def all(list1: list[int], num1: int) -> bool:
     """Given a list of ints and a singualr int, will return true or false depending on whether the ints in the list are the same as the singular int."""
     # Will check if the list exists, and whether every integer in the list is equal to the singular search integer.
@@ -13,7 +14,10 @@ def all(list1: list[int], num1: int) -> bool:
             return False
         num_idx += 1
     return True
+
+
 print(all([1, 1, 1], 1))
+
 
 def max(input: list[int]) -> int:
     """Given a list of integers, it will return the integer of highest value."""
@@ -28,6 +32,8 @@ def max(input: list[int]) -> int:
             max_num = input[max_idx]
         max_idx += 1
     return max_num
+
+
 print(max([2, 2, 35]))
 
 
@@ -51,5 +57,6 @@ def is_equal(lista: list[int], listb: list[int]) -> bool:
     else:
         return False
     
+
 print(is_equal([1, 0, 1], [1, 0, 1]))
 print(is_equal([1, 1, 0], [1, 0, 1]))
