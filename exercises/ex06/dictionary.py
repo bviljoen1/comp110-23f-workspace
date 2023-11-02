@@ -1,6 +1,7 @@
 """Dictionaries. Working Progress."""
 __author__ = "730579443"
 
+
 def invert(input_dict: dict[str, str]) -> dict[str, str]:
     """Given a dictionary of two strings, [str1, str2] will return them reversed order [str2, str1]."""
     result_dict = {}
@@ -14,16 +15,20 @@ def invert(input_dict: dict[str, str]) -> dict[str, str]:
 
     return result_dict
 
+
 # Using their examples to test if it works as it should
 input_dict = {'apple': 'cat'}
 result = invert(input_dict)
 print(result)
 
+
 # This one is confusing as heck.
-def favorite_colors(name_colors: dict[str, str]) -> str:    
+
+
+def favorite_color(name_colors: dict[str, str]) -> str:    
     """Takes a dictionary of peoples names and their favorite color and will return the most popular colour."""
-    number_colours = {}  # Empty Dictionary that will store each color with the number of times it appears.
-    popular_color = None
+    number_colours: dict[str, int] = {}  # Empty Dictionary that will store each color with the number of times it appears.
+    popular_color: str = ""
     max_number = 0
 
     for name in name_colors:
@@ -42,7 +47,7 @@ def favorite_colors(name_colors: dict[str, str]) -> str:
 
 # Example usage:
 name_colors = {"Marc": "yellow", "Ezri": "blue", "Kris": "blue"}
-result = favorite_colors(name_colors)
+result = favorite_color(name_colors)
 print(result)
 
 
@@ -94,7 +99,7 @@ def update_attendance(input_dict: dict[str, list[str]], weekday: str, student: s
 
 
 # Attendance dict.
-attendance_log: dict = {"Monday": ["Vrinda", "Kaleb"], "Tuesday": ["Alyssa"]}
+attendance_log: dict[str, list[str]] = {"Monday": ["Vrinda", "Kaleb"], "Tuesday": ["Alyssa"]}
 update_attendance(attendance_log, "Tuesday", "Vrinda")
 update_attendance(attendance_log, "Wednesday", "Kaleb")
 print(attendance_log)
