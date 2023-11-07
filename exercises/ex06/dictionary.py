@@ -17,7 +17,7 @@ def invert(input_dict: dict[str, str]) -> dict[str, str]:
 
 
 # Using their examples to test if it works as it should
-input_dict = {'apple': 'cat'}
+input_dict = {'apple': 'cat', 'fortnite': 'ben'}
 result = invert(input_dict)
 print(result)
 
